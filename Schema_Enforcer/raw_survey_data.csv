@@ -1,0 +1,6 @@
+student_id,major,GPA,is_cs_major,credits_taken
+101,Computer Science,4,Yes,78.0
+102,Behavioral Neuroscience,3.9,No,80.5
+103,Anthropology,3.6,No,105.0
+104,Data Science,3,Yes,65.1
+105,Media Studies,2.9,No,15.0
