@@ -1,0 +1,3 @@
+Makefile:12: *** missing separator.  Stop.
+Makefile:12: *** missing separator.  Stop.
+Makefile:12: *** missing separator.  Stop.
