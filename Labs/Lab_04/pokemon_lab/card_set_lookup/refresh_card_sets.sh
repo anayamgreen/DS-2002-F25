@@ -1,14 +1,10 @@
-#!/bin/bash
-set -e 
+#!/usr/bin/env bash
 
-echo "Refeshing all card sets in the $card_sets_dir directory..."
-
-for FILE in "$card_sets_dir"/*.json; do
-    SET_ID=$(basename "$FILE" .json)
-    echo "Refreshing card set: $SET_ID"
-    curl -s "https://api.pokemontcg.io/v2/cards?q=set.id:${SET_ID}" -o "$FILE"
-    echo "Updated data is written to $FILE and is done"
+echo "Refreshing all card sets in card_set_lookup/..."
+for FILE in card_set_lookup/*.json; do
+  SET_ID=$(basename "$FILE" .json)
+  echo "Updating set: $SET_ID"
+  curl -s "https://api.pokemontcg.io/v2/cards?q=set.id:$SET_ID&page=1&pageSize=250" > "$FILE"
+  echo "Data written to "$FILE""
 done
-
-
-echo "All card sets have been refreshed."
+echo "All card sets refreshed."
